@@ -232,6 +232,7 @@ label,
 
 .hero-container {
   width: 90%;
+  max-width: 1200px;
   margin: auto;
   display: flex;
   align-items: center;
@@ -241,20 +242,16 @@ label,
 
 .hero-left,
 .hero-right {
-  flex: 0 0 50%;
+  flex: 1;              /* equal width */
   max-width: 50%;
 }
 
 .hero-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  min-width: 0;
 }
 
 .hero-right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-width: 0;
 }
 
 .hero-left h1 {
@@ -339,7 +336,6 @@ label,
 .hero-right lottie-player {
   width: 100%;
   max-width: 500px;
-  /* prevents pushing layout */
   height: auto;
 }
 
