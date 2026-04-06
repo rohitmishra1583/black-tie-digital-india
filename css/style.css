@@ -1115,7 +1115,7 @@ label,
 .work-gallery {
   display: grid;
   grid-template-columns: repeat(3, 360px);
-  justify-content: center; 
+  justify-content: center;
   gap: 30px;
   margin-top: 50px;
 }
@@ -1941,6 +1941,47 @@ label,
   backdrop-filter: blur(6px);
 }
 
+@media (max-width: 1024px) {
+
+  .case-study-scroll {
+    height: auto;
+    padding-bottom: 50px;
+  }
+
+  .scroll-wrapper {
+    position: static;
+    overflow: visible;
+  }
+
+  .scroll-track {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+    padding-left: 0;
+    transform: none !important;
+  }
+
+  .case-card {
+    width: 100%;
+    min-width: unset;
+    height: 200px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .scroll-track {
+    grid-template-columns: 1fr;
+  }
+
+  .case-card {
+    height: 220px;
+  }
+
+}
+
 .partner-section {
   text-align: center;
   padding: 60px 20px;
@@ -2310,15 +2351,53 @@ label,
 }
 
 @media (max-width: 992px) {
+
+  .testimonial-track {
+    animation: none;             
+    width: auto;
+    animation: scrollSlider 35s linear infinite;
+
+    overflow-x: auto;            
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+  }
+
+  .testimonial-slider {
+    overflow-x: auto;
+  }
+
   .testimonial-card {
     flex: 0 0 260px;
   }
+
 }
 
 @media (max-width: 576px) {
-  .testimonial-card {
-    flex: 0 0 85%;
+
+  .testimonial {
+    padding: 50px 15px;
   }
+
+  .testimonial-title {
+    font-size: 26px;
+  }
+
+  .testimonial-track {
+    gap: 15px;
+    padding-left: 10px;
+    animation: scrollSlider 35s linear infinite;
+  }
+
+  .testimonial-card {
+    flex: 0 0 85%;   
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .testimonial-text {
+    font-size: 14px;
+  }
+
 }
 
 .footer {
