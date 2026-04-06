@@ -230,16 +230,31 @@ label,
   }
 }
 
-.container {
+.hero-container {
   width: 90%;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-left,
+.hero-right {
+  flex: 0 0 50%;
+  max-width: 50%;
 }
 
 .hero-left {
-  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-left h1 {
@@ -323,7 +338,9 @@ label,
 
 .hero-right lottie-player {
   width: 100%;
-  height: 90%;
+  max-width: 500px;
+  /* prevents pushing layout */
+  height: auto;
 }
 
 .floating {
@@ -398,9 +415,15 @@ label,
     padding: 100px 0 60px;
   }
 
-  .container {
+  .hero-container {
     flex-direction: column;
     text-align: center;
+  }
+
+  .hero-left,
+  .hero-right {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 
   .hero-left {
@@ -2353,11 +2376,11 @@ label,
 @media (max-width: 992px) {
 
   .testimonial-track {
-    animation: none;             
+    animation: none;
     width: auto;
     animation: scrollSlider 35s linear infinite;
 
-    overflow-x: auto;            
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding-bottom: 10px;
   }
@@ -2389,7 +2412,7 @@ label,
   }
 
   .testimonial-card {
-    flex: 0 0 85%;   
+    flex: 0 0 85%;
     min-height: auto;
     padding: 20px;
   }
