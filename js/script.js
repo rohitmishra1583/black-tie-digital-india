@@ -299,6 +299,41 @@ function updateViewer() {
 
 const cases = [
   {
+    title: "Chetna Joshi",
+    images: [
+      "images/caseStudy/BTD_page-0029.jpg",
+      "images/caseStudy/BTD_page-0030.jpg",
+      "images/caseStudy/BTD_page-0031.jpg",
+      "images/caseStudy/BTD_page-0032.jpg"
+    ]
+  },
+  {
+    title: "Aanchal Shrivastava",
+    images: [
+      "images/caseStudy/BTD_page-0033.jpg",
+      "images/caseStudy/BTD_page-0034.jpg",
+      "images/caseStudy/BTD_page-0035.jpg",
+      "images/caseStudy/BTD_page-0036.jpg"
+    ]
+  },
+  {
+    title: "Raman Kapur",
+    images: [
+      "images/caseStudy/BTD_page-0037.jpg",
+      "images/caseStudy/BTD_page-0038.jpg",
+      "images/caseStudy/BTD_page-0039.jpg"
+    ]
+  },
+  {
+    title: "Lata Tondon",
+    images: [
+      "images/caseStudy/BTD_page-0041.jpg",
+      "images/caseStudy/BTD_page-0042.jpg",
+      "images/caseStudy/BTD_page-0043.jpg",
+      "images/caseStudy/BTD_page-0044.jpg"
+    ]
+  },
+  {
     title: "Meal Berg",
     images: [
       "images/caseStudy/BTD_page-0012.jpg",
@@ -332,41 +367,6 @@ const cases = [
       "images/caseStudy/BTD_page-0025.jpg",
       "images/caseStudy/BTD_page-0026.jpg",
       "images/caseStudy/BTD_page-0027.jpg"
-    ]
-  },
-  {
-    title: "Chetna Joshi",
-    images: [
-      "images/caseStudy/BTD_page-0029.jpg",
-      "images/caseStudy/BTD_page-0030.jpg",
-      "images/caseStudy/BTD_page-0031.jpg",
-      "images/caseStudy/BTD_page-0032.jpg"
-    ]
-  },
-  {
-    title: "Aanchal Shrivastava",
-    images: [
-      "images/caseStudy/BTD_page-0033.jpg",
-      "images/caseStudy/BTD_page-0034.jpg",
-      "images/caseStudy/BTD_page-0035.jpg",
-      "images/caseStudy/BTD_page-0036.jpg"
-    ]
-  },
-  {
-    title: "Raman Kapur",
-    images: [
-      "images/caseStudy/BTD_page-0037.jpg",
-      "images/caseStudy/BTD_page-0038.jpg",
-      "images/caseStudy/BTD_page-0039.jpg"
-    ]
-  },
-  {
-    title: "Lata Tondon",
-    images: [
-      "images/caseStudy/BTD_page-0041.jpg",
-      "images/caseStudy/BTD_page-0042.jpg",
-      "images/caseStudy/BTD_page-0043.jpg",
-      "images/caseStudy/BTD_page-0044.jpg"
     ]
   }
 ];
