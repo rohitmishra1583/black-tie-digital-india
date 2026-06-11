@@ -368,6 +368,14 @@ const cases = [
       "images/caseStudy/BTD_page-0026.jpg",
       "images/caseStudy/BTD_page-0027.jpg"
     ]
+  },
+  {
+    title: "360 DigiTMG",
+    images: [
+      "images/caseStudy/BTD_page-0045.jpg",
+      "images/caseStudy/BTD_page-0046.jpg",
+      "images/caseStudy/BTD_page-0047.jpg"
+    ]
   }
 ];
 
