@@ -376,6 +376,15 @@ const cases = [
       "images/caseStudy/BTD_page-0046.jpg",
       "images/caseStudy/BTD_page-0047.jpg"
     ]
+  },
+  {
+    title: "Oya Kekars",
+    images: [
+      "images/caseStudy/BTD_page-0048.jpg",
+      "images/caseStudy/BTD_page-0049.jpg",
+      "images/caseStudy/BTD_page-0050.jpg",
+      "images/caseStudy/BTD_page-0051.jpg"
+    ]
   }
 ];
 
