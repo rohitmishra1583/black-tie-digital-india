@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Black Tie Events | Black Tie Digital India</title>
+  <meta
+    content="Black Tie Events by Black Tie Digital India offers end-to-end event planning and management for weddings, corporate events, birthdays and more."
+    name="description" />
+  <link href="https://blacktiedigitalindia.com/black-tie-event/" rel="canonical" />
+  <meta content="website" property="og:type" />
+  <meta content="Black Tie Events | Black Tie Digital India" property="og:title" />
+  <meta
+    content="Black Tie Events by Black Tie Digital India offers end-to-end event planning and management for weddings, corporate events, birthdays and more."
+    property="og:description" />
+  <meta content="https://blacktiedigitalindia.com/black-tie-event/" property="og:url" />
+  <meta content="https://blacktiedigitalindia.com/images/logo/black-tie-digital.png" property="og:image" />
+  <meta content="Black Tie Digital India" property="og:site_name" />
+  <meta content="summary_large_image" name="twitter:card" />
+  <meta content="Black Tie Events | Black Tie Digital India" name="twitter:title" />
+  <meta
+    content="Black Tie Events by Black Tie Digital India offers end-to-end event planning and management for weddings, corporate events, birthdays and more."
+    name="twitter:description" />
+  <meta content="https://blacktiedigitalindia.com/images/logo/black-tie-digital.png" name="twitter:image" />
+  <link href="/favicon_io/favicon.ico" rel="icon" type="image/x-icon" />
+  <link href="/favicon_io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+  <link href="/favicon_io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+  <link href="/favicon_io/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png" />
+  <link href="/favicon_io/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+  <link href="/favicon_io/site.webmanifest" rel="manifest" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link
+    href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&amp;f[]=satoshi@400,500,700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="/css/style.css" rel="stylesheet" />
+  <style>
+    .event-section {
+      padding: 100px 4%;
+      background: radial-gradient(circle at top, var(--color-charcoal), var(--color-black) 70%);
+      color: var(--color-white);
+
+      animation: fadeSlideUp 1s ease;
+    }
+
+    .event-container {
+      display: grid;
+      align-items: center;
+    }
+
+    .event-container p {
+      padding: 20px 10%;
+      text-align: center;
+    }
+
+    .event-title {
+      font-size: 38px;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, var(--color-gold-light), var(--color-white), var(--color-gold));
+      -webkit-background-clip: text;
+      color: transparent;
+      text-align: center;
+    }
+
+    .event-content {
+      margin-top: 80px;
+      text-align: center;
+    }
+
+    .event-content h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .event-content p {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--color-gray-light);
+    }
+
+    .event-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-top: 50px;
+    }
+
+    .event-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+
+      background-size: cover;
+      background-position: center;
+
+      width: 85%;
+      margin: 0 auto;
+      min-height: 360px;
+
+      display: flex;
+      align-items: center;
+    }
+
+    .event-card-content {
+      width: 60%;
+      padding: 40px;
+      color: white;
+
+      background: linear-gradient(to right,
+          rgba(0, 0, 0, 0.8) 0%,
+          rgba(0, 0, 0, 0.6) 50%,
+          rgba(0, 0, 0, 0.8) 100%,
+          transparent 100%);
+
+      backdrop-filter: blur(6px);
+      text-align: left;
+    }
+
+    .event-card-content h2 {
+      color: var(--color-gold);
+      margin-bottom: 15px;
+    }
+
+    .event-card-content p {
+      color: var(--color-gray-light);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .event-card-content h4 {
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .event-card-content ul {
+      padding-left: 0;
+      color: var(--color-gray-lighter);
+      list-style: none;
+
+    }
+
+    .event-card-content ul li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 10px;
+    }
+
+    .event-card-content ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: var(--color-gray-lighter);
+      font-weight: bold;
+    }
+
+    .event-card-content li {
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 900px) {
+      .event-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .event-card-content {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7);
+      }
+    }
+
+    @media (max-width: 1024px) {
+
+      .event-title {
+        font-size: 32px;
+      }
+
+      .event-container p {
+        padding: 20px 5%;
+        font-size: 15px;
+      }
+
+      .event-card {
+        width: 95%;
+      }
+
+      .event-card-content {
+        width: 70%;
+        padding: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .event-section {
+        padding-top: 100px;
+      }
+
+      .event-title {
+        padding-top: 10px;
+        font-size: 22px;
+      }
+
+      .event-content h1 {
+        font-size: 20px;
+      }
+
+      .event-card-content {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <section class="event-section">
+    <div class="breadcrumb">
+      <a href="/">← 🏠</a>
+      <span class="separator">/</span>
+      <span>Black Tie Events</span>
+    </div>
+    <div class="event-container">
+      <h1 class="event-title">Black Tie Events - where every event feels special.</h1>
+      <p>
+        With 7+ years of experience, we turn your ideas into beautiful, seamless celebrations, handling every
+        detail with care, creativity, and your budget in mind.
+      </p>
+    </div>
+    <div class="event-content">
+      <h1>Our Event Management Services:</h1>
+      <div class="event-cards">
+        <div class="event-card" style="background-image: url('/images/events/wedding-prewedding.jpg');">
+          <div class="event-card-content">
+            <h2>Weddings &amp; Pre-Wedding Functions</h2>
+            <p>
+              From dreamy décor to seamless coordination, we bring your love story to life.
+              Whether it's a grand celebration or an intimate ceremony, we handle everything —
+              venue, decor, logistics, hospitality, entertainment.
+            </p>
+            <h4>Types of wedding events we cover:</h4>
+            <ul>
+              <li>Engagements</li>
+              <li>Mehendi &amp; Sangeet</li>
+              <li>Haldi functions</li>
+              <li>Destination weddings</li>
+              <li>Reception parties</li>
+            </ul>
+          </div>
+        </div>
+        <div class="event-card reverse" style="background-image: url('/images/events/event.jpg');">
+          <div class="event-card-content">
+            <h2>Corporate Events &amp; Office Parties</h2>
+            <p>
+              Professional doesn't have to mean boring. Whether it's a team celebration, product launch,
+              annual meet, or festive office party, we help you create experiences that reflect your brand
+              and boost morale.
+            </p>
+            <h4>We organize:</h4>
+            <ul>
+              <li>Annual days</li>
+              <li>Conferences &amp; seminars</li>
+              <li>Team-building events</li>
+              <li>Office parties &amp; festive celebrations</li>
+              <li>Flea markets, pop-ups &amp; exhibitions</li>
+            </ul>
+          </div>
+        </div>
+        <div class="event-card" style="background-image: url('/images/events/birthday-party.jpg');">
+          <div class="event-card-content">
+            <h2>Birthday Parties</h2>
+            <p>
+              Celebrate life’s special moments with unforgettable birthday experiences.
+              Whether it’s a kids' party full of fun activities or an elegant milestone celebration,
+              we design and manage every detail to match your vision and style.
+            </p>
+            <h4>Types of birthday events we cover:</h4>
+            <ul>
+              <li>Kids themed birthday parties</li>
+              <li>Milestone birthdays (18th, 21st, 50th, etc.)</li>
+              <li>Private house parties</li>
+              <li>Surprise birthday celebrations</li>
+              <li>Luxury &amp; destination birthday events</li>
+            </ul>
+          </div>
+        </div>
+        <div class="event-card reverse" style="background-image: url('/images/events/flea.jpg');">
+          <div class="event-card-content">
+            <h2>Flea Market</h2>
+            <p>
+              We curate lively flea markets that bring together creativity, culture, and commerce.
+              From local artisans to emerging brands, our markets create a vibrant space where
+              people can shop, explore, and enjoy unique experiences.
+            </p>
+            <h4>What we organize in flea markets:</h4>
+            <ul>
+              <li>Handmade &amp; artisan stalls</li>
+              <li>Vintage &amp; thrift collections</li>
+              <li>Food trucks &amp; pop-up cafes</li>
+              <li>Live music &amp; entertainment</li>
+              <li>Brand promotions &amp; exhibitions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="footer"></div>
+  <div class="whatsapp-container">
+    <a class="whatsapp-float" href="https://wa.me/918890099108" target="_blank">
+      <img alt="WhatsApp" decoding="async" loading="lazy" src="/images/icons8-whatsapp-96.png" />
+    </a>
+    <span class="whatsapp-tooltip">Chat with us</span>
+  </div>
+  <div class="cursor-hand"></div>
+  <script src="/js/script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+
+</html>

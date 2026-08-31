@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Our Work &amp; Case Studies | Black Tie Digital India</title>
+  <meta
+    content="Browse real case studies and results from Black Tie Digital India's campaigns across F&amp;B, real estate, fitness, jewellery, IT and more industries."
+    name="description" />
+  <link href="https://blacktiedigitalindia.com/our-work/" rel="canonical" />
+  <meta content="website" property="og:type" />
+  <meta content="Our Work &amp; Case Studies | Black Tie Digital India" property="og:title" />
+  <meta
+    content="Browse real case studies and results from Black Tie Digital India's campaigns across F&amp;B, real estate, fitness, jewellery, IT and more industries."
+    property="og:description" />
+  <meta content="https://blacktiedigitalindia.com/our-work/" property="og:url" />
+  <meta content="https://blacktiedigitalindia.com/images/logo/black-tie-digital.png" property="og:image" />
+  <meta content="Black Tie Digital India" property="og:site_name" />
+  <meta content="summary_large_image" name="twitter:card" />
+  <meta content="Our Work &amp; Case Studies | Black Tie Digital India" name="twitter:title" />
+  <meta
+    content="Browse real case studies and results from Black Tie Digital India's campaigns across F&amp;B, real estate, fitness, jewellery, IT and more industries."
+    name="twitter:description" />
+  <meta content="https://blacktiedigitalindia.com/images/logo/black-tie-digital.png" name="twitter:image" />
+  <link href="/favicon_io/favicon.ico" rel="icon" type="image/x-icon" />
+  <link href="/favicon_io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+  <link href="/favicon_io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+  <link href="/favicon_io/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png" />
+  <link href="/favicon_io/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+  <link href="/favicon_io/site.webmanifest" rel="manifest" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link
+    href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&amp;f[]=satoshi@400,500,700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="/css/style.css" rel="stylesheet" />
+  <style>
+    .work-section {
+      padding: 100px 4%;
+      background: radial-gradient(circle at top, var(--color-charcoal), var(--color-black) 70%);
+      color: var(--color-white);
+
+      animation: fadeSlideUp 1s ease;
+    }
+
+    .work-container {
+      display: grid;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .work-title {
+      font-size: 38px;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, var(--color-gold-light), var(--color-white), var(--color-gold));
+      -webkit-background-clip: text;
+      color: transparent;
+      text-align: center;
+    }
+
+    .work-filter {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .work-filter button {
+      padding: 10px 20px;
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: transparent;
+      color: var(--color-white);
+      cursor: pointer;
+      transition: 0.3s ease;
+      font-size: 14px;
+    }
+
+    .work-filter button:hover {
+      border-color: var(--color-gold);
+      color: var(--color-gold);
+    }
+
+    .work-filter button.active {
+      background: var(--gradient-gold);
+      border-color: var(--color-gold);
+      color: var(--color-true-black);
+      font-weight: 600;
+    }
+
+    .work-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 360px);
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .work-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.4s ease;
+      display: block;
+    }
+
+    .work-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: 0.4s ease;
+    }
+
+    .work-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      opacity: 0.8;
+    }
+
+    .work-card h3 {
+      color: var(--color-white);
+      position: absolute;
+      bottom: 40px;
+      left: 20px;
+      font-size: 18px;
+      z-index: 2;
+    }
+
+    .work-card .tag {
+      color: var(--color-white);
+      position: absolute;
+      bottom: 15px;
+      left: 20px;
+      font-size: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 5px 10px;
+      border-radius: 20px;
+      z-index: 2;
+    }
+
+    .work-card {
+      opacity: 1;
+      transform: translateY(0);
+      transition: 0.4s ease, opacity 0.4s ease;
+    }
+
+    .work-card.hide {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .work-title {
+        font-size: 30px;
+      }
+
+      .work-card img {
+        height: 180px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .work-gallery {
+        grid-template-columns: repeat(3, 300px);
+      }
+    }
+
+    @media (max-width: 992px) {
+      .work-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 10px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .work-gallery {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0 10px;
+      }
+
+      .work-card img {
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .work-title {
+        font-size: 24px;
+      }
+
+      .work-filter button {
+        font-size: 12px;
+        padding: 8px 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <section class="work-section">
+    <div class="breadcrumb">
+      <a href="/">← 🏠</a>
+      <span class="separator">/</span>
+      <span>Our Work</span>
+    </div>
+    <div class="work-container">
+      <h1 class="work-title">Our Work</h1>
+      <div class="work-filter">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="jewellery">Jewellery</button>
+        <button data-filter="food">Sweets &amp; Dry Fruits</button>
+        <button data-filter="skincare">Skincare &amp; Boutique</button>
+        <button data-filter="clinic">Clinic</button>
+        <button data-filter="homedecor">Home Decor &amp; Furniture</button>
+        <button data-filter="coaching">Coaching</button>
+        <button data-filter="toy">Toy</button>
+        <button data-filter="realestate">Real Estate &amp; Interior</button>
+        <button data-filter="fnb">Food &amp; Beverage</button>
+        <button data-filter="fitness">Fitness &amp; Wellness</button>
+        <button data-filter="itfinance">IT &amp; Finance</button>
+      </div>
+      <div class="work-gallery">
+        <a class="work-card" data-category="jewellery" href="https://www.vaibhavjewellers.com" target="_blank">
+          <img alt="Jewellery 1 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/jewellery1.jpg" />
+          <h3>Vaibhav Jewellers</h3>
+          <span class="tag">Jewellery</span>
+        </a>
+        <a class="work-card" data-category="jewellery" href="http://bhimagold.com" target="_blank">
+          <img alt="Jewellery 2 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/jewellery2.jpg" />
+          <h3>Bhima Gold</h3>
+          <span class="tag">Jewellery</span>
+        </a>
+        <a class="work-card" data-category="jewellery" href="https://rubans.in" target="_blank">
+          <img alt="Jewellery 3 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/jewellery3.jpg" />
+          <h3>Rubans</h3>
+          <span class="tag">Jewellery</span>
+        </a>
+        <a class="work-card" data-category="jewellery" href="https://priyaasi.com" target="_blank">
+          <img alt="Jewellery 4 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/jewellery4.jpg" />
+          <h3>Priyaasi</h3>
+          <span class="tag">Jewellery</span>
+        </a>
+        <a class="work-card" data-category="jewellery" href="https://www.amama.in" target="_blank">
+          <img alt="Jewellery 5 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/jewellery5.jpg" />
+          <h3>Amama</h3>
+          <span class="tag">Jewellery</span>
+        </a>
+        <a class="work-card" data-category="food" href="https://mithai-world.vercel.app" target="_blank">
+          <img alt="Sweets 1 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/sweets1.jpg" />
+          <h3>Mithai World</h3>
+          <span class="tag">Sweets &amp; Dry Fruits</span>
+        </a>
+        <a class="work-card" data-category="food" href="https://apnasweets.com" target="_blank">
+          <img alt="Sweets 2 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/sweets2.jpg" />
+          <h3>Apna Sweets</h3>
+          <span class="tag">Sweets &amp; Dry Fruits</span>
+        </a>
+        <a class="work-card" data-category="food" href="https://bhanwarilalmithaiwala.com" target="_blank">
+          <img alt="Sweets 3 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/sweets3.jpg" />
+          <h3>Bhanwarilal Mithaiwala</h3>
+          <span class="tag">Sweets &amp; Dry Fruits</span>
+        </a>
+        <a class="work-card" data-category="food" href="https://nuttyaffair.in" target="_blank">
+          <img alt="Sweets 4 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/sweets4.jpg" />
+          <h3>Nutty Affair</h3>
+          <span class="tag">Sweets &amp; Dry Fruits</span>
+        </a>
+        <a class="work-card" data-category="food" href="https://www.tatanutrikorner.com" target="_blank">
+          <img alt="Sweets 5 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/sweets5.jpg" />
+          <h3>Tata NutriKorner</h3>
+          <span class="tag">Dry Fruits</span>
+        </a>
+        <a class="work-card" data-category="skincare" href="https://mintree.in" target="_blank">
+          <img alt="Skin 1 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/skin1.jpg" />
+          <h3>Mintree</h3>
+          <span class="tag">Skincare</span>
+        </a>
+        <a class="work-card" data-category="skincare" href="https://www.theskindietcompany.com" target="_blank">
+          <img alt="Skin 2 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/skin2.jpg" />
+          <h3>Skin Diet Company</h3>
+          <span class="tag">Skincare</span>
+        </a>
+        <a class="work-card" data-category="skincare" href="https://niralooms.com" target="_blank">
+          <img alt="Boutique 1 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/boutique1.jpg" />
+          <h3>Nira Looms</h3>
+          <span class="tag">Boutique</span>
+        </a>
+        <a class="work-card" data-category="skincare" href="https://swishbydolcyandsimran.com" target="_blank">
+          <img alt="Boutique 2 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/boutique2.jpg" />
+          <h3>Swish Boutique</h3>
+          <span class="tag">Boutique</span>
+        </a>
+        <a class="work-card" data-category="clinic" href="https://dhlskincentre.com" target="_blank">
+          <img alt="Clinic 1 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/clinic1.jpg" />
+          <h3>DHL Skin Centre</h3>
+          <span class="tag">Clinic</span>
+        </a>
+        <a class="work-card" data-category="homedecor" href="https://spaciocollections.com" target="_blank">
+          <img alt="Homedecor 1 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/homedecor1.jpg" />
+          <h3>Spacio Collections</h3>
+          <span class="tag">Home Decor</span>
+        </a>
+        <a class="work-card" data-category="homedecor" href="https://www.thesoftfur.com" target="_blank">
+          <img alt="Homedecor 2 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/homedecor2.jpg" />
+          <h3>The Soft Fur</h3>
+          <span class="tag">Home Decor</span>
+        </a>
+        <a class="work-card" data-category="homedecor" href="https://www.ojasviaura.com" target="_blank">
+          <img alt="Homedecor 3 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/homedecor3.jpg" />
+          <h3>Ojasvi Aura</h3>
+          <span class="tag">Home Decor</span>
+        </a>
+        <a class="work-card" data-category="homedecor" href="https://bharatlifestylefurniture.com" target="_blank">
+          <img alt="Furniture 1 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/furniture1.jpg" />
+          <h3>Bharat Lifestyle</h3>
+          <span class="tag">Furniture</span>
+        </a>
+        <a class="work-card" data-category="homedecor" href="https://www.alankaram.in" target="_blank">
+          <img alt="Furniture 2 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/furniture2.jpg" />
+          <h3>Alankaram</h3>
+          <span class="tag">Furniture</span>
+        </a>
+        <a class="work-card" data-category="coaching" href="https://vistatradingacademy.in" target="_blank">
+          <img alt="Coaching 1 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/coaching1.jpg" />
+          <h3>Vista Trading</h3>
+          <span class="tag">Coaching</span>
+        </a>
+        <a class="work-card" data-category="coaching" href="https://www.eduleap.in" target="_blank">
+          <img alt="Coaching 2 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/coaching2.jpg" />
+          <h3>360DigiTMG</h3>
+          <span class="tag">Coaching</span>
+        </a>
+        <a class="work-card" data-category="coaching" href="https://www.sportifyx.in" target="_blank">
+          <img alt="Coaching 3 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/coaching3.jpg" />
+          <h3>SportifyX</h3>
+          <span class="tag">Coaching</span>
+        </a>
+        <a class="work-card" data-category="toy" href="https://www.thetoyrentcompany.com" target="_blank">
+          <img alt="Toy 1 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/toy1.jpg" />
+          <h3>The Toyrent</h3>
+          <span class="tag">Toy</span>
+        </a>
+        <a class="work-card" data-category="realestate" href="https://ominteriorspune.com/" target="_blank">
+          <img alt="Realestate 1 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/realestate1.jpg" />
+          <h3>Om Interiors Pune</h3>
+          <span class="tag">Interior Design</span>
+        </a>
+        <a class="work-card" data-category="realestate" href="https://cloud51.in/" target="_blank">
+          <img alt="Realestate 2 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/realestate2.jpg" />
+          <h3>Cloud 51</h3>
+          <span class="tag">Real Estate</span>
+        </a>
+        <a class="work-card" data-category="realestate" href="https://oreereality.com/" target="_blank">
+          <img alt="Realestate 3 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/realestate3.jpg" />
+          <h3>Oree Reality</h3>
+          <span class="tag">Real Estate</span>
+        </a>
+        <a class="work-card" data-category="realestate" href="https://interiorinpune.in/" target="_blank">
+          <img alt="Realestate 4 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/realestate4.jpg" />
+          <h3>Interior in Pune</h3>
+          <span class="tag">Interior Design</span>
+        </a>
+        <a class="work-card" data-category="realestate" href="https://www.indextap.com/" target="_blank">
+          <img alt="Realestate 5 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/realestate5.jpg" />
+          <h3>Indextap</h3>
+          <span class="tag">Interior Design</span>
+        </a>
+        <a class="work-card" data-category="realestate" href="https://www.crematrix.com/" target="_blank">
+          <img alt="Realestate 6 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/realestate6.jpg" />
+          <h3>Crematrix</h3>
+          <span class="tag">Interior Design</span>
+        </a>
+        <a class="work-card" data-category="fnb" href="https://www.pushpmasale.com/" target="_blank">
+          <img alt="Fnb 1 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/fnb1.jpg" />
+          <h3>Pushp Masale</h3>
+          <span class="tag">Spices</span>
+        </a>
+        <a class="work-card" data-category="fnb" href="https://chai-vaaicafe.in/" target="_blank">
+          <img alt="Fnb 2 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/fnb2.jpg" />
+          <h3>Chai Vaai Cafe</h3>
+          <span class="tag">Cafe</span>
+        </a>
+        <a class="work-card" data-category="fnb" href="https://nakhralidhani.com/" target="_blank">
+          <img alt="Fnb 3 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/fnb3.jpg" />
+          <h3>Nakhrali Dhani</h3>
+          <span class="tag">Restaurant</span>
+        </a>
+        <a class="work-card" data-category="fnb"
+          href="https://www.pridehotel.com/pride-hotel-and-convention-centre-indore/" target="_blank">
+          <img alt="Fnb 4 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/fnb4.jpg" />
+          <h3>Pride Hotel Indore</h3>
+          <span class="tag">Hotel</span>
+        </a>
+        <a class="work-card" data-category="fnb" href="https://sinq.in/" target="_blank">
+          <img alt="Fnb 5 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/fnb5.jpg" />
+          <h3>Sinq Night Club</h3>
+          <span class="tag">Nightlife</span>
+        </a>
+        <a class="work-card" data-category="fnb" href="https://piccolo.menuqrate.com/" target="_blank">
+          <img alt="Fnb 6 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/fnb6.jpg" />
+          <h3>Piccolo</h3>
+          <span class="tag">Restaurant</span>
+        </a>
+        <a class="work-card" data-category="fnb" href="https://www.mrbeans.in/" target="_blank">
+          <img alt="Fnb 7 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/fnb7.jpg" />
+          <h3>Mr Beans</h3>
+          <span class="tag">Cafe</span>
+        </a>
+        <a class="work-card" data-category="fnb" href="https://www.lemonleaf.in/" target="_blank">
+          <img alt="Fnb 8 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/fnb8.jpg" />
+          <h3>Lemon Leaf</h3>
+          <span class="tag">Resort</span>
+        </a>
+        <a class="work-card" data-category="fnb" href="https://oyakekars.com/" target="_blank">
+          <img alt="Fnb 9 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/fnb9.jpg" />
+          <h3>Oya Kekars</h3>
+          <span class="tag">Cake Shop</span>
+        </a>
+        <a class="work-card" data-category="fitness" href="https://www.shiamak.com/" target="_blank">
+          <img alt="Fitness 1 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/fitness1.jpg" />
+          <h3>Shiamak Dance</h3>
+          <span class="tag">Dance Academy</span>
+        </a>
+        <a class="work-card" data-category="fitness" href="https://www.pycgymkhana.com/" target="_blank">
+          <img alt="Fitness 2 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/fitness2.jpg" />
+          <h3>PYC Gymkhana</h3>
+          <span class="tag">Fitness Club</span>
+        </a>
+        <a class="work-card" data-category="fitness" href="https://pycfitstudio.com/" target="_blank">
+          <img alt="Fitness 3 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/fitness3.jpg" />
+          <h3>PYC Fit Studio</h3>
+          <span class="tag">Gym</span>
+        </a>
+        <a class="work-card" data-category="fitness" href="https://vjsfitnessclub.com/" target="_blank">
+          <img alt="Fitness 4 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/fitness4.jpg" />
+          <h3>VJS Fitness Club</h3>
+          <span class="tag">Gym</span>
+        </a>
+        <a class="work-card" data-category="fitness" href="https://sculpturephysiocare.com/" target="_blank">
+          <img alt="Fitness 5 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/fitness5.jpg" />
+          <h3>Sculpture Physiocare</h3>
+          <span class="tag">Physiotherapy</span>
+        </a>
+        <a class="work-card" data-category="fitness" href="https://realignphysiotherapyclinic.com/" target="_blank">
+          <img alt="Fitness 6 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/fitness6.jpg" />
+          <h3>Realign Physiotherapy</h3>
+          <span class="tag">Physiotherapy</span>
+        </a>
+        <a class="work-card" data-category="fitness" href="https://samadhanphysiotherapyandwellnesscenter.com/"
+          target="_blank">
+          <img alt="Fitness 7 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/fitness7.jpg" />
+          <h3>Samadhan Wellness</h3>
+          <span class="tag">Wellness Center</span>
+        </a>
+        <a class="work-card" data-category="fitness" href="https://reformwellness.in/" target="_blank">
+          <img alt="Wellness 2 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/wellness2.jpg" />
+          <h3>Reform Wellness</h3>
+          <span class="tag">Wellness Center</span>
+        </a>
+        <a class="work-card" data-category="itfinance" href="https://www.nuformsocial.com/" target="_blank">
+          <img alt="It 1 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/it1.jpg" />
+          <h3>Nuform Social</h3>
+          <span class="tag">Marketing Tech</span>
+        </a>
+        <a class="work-card" data-category="itfinance" href="https://misscrm.in/" target="_blank">
+          <img alt="It 2 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/it2.jpg" />
+          <h3>Miss CRM</h3>
+          <span class="tag">CRM Software</span>
+        </a>
+        <a class="work-card" data-category="itfinance" href="https://www.arihantcapital.com/" target="_blank">
+          <img alt="It 3 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/it3.jpg" />
+          <h3>Arihant Capital</h3>
+          <span class="tag">Finance</span>
+        </a>
+        <a class="work-card" data-category="itfinance" href="https://www.financebuddha.com/" target="_blank">
+          <img alt="It 4 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/it4.jpg" />
+          <h3>Finance Buddha</h3>
+          <span class="tag">Finance</span>
+        </a>
+        <a class="work-card" data-category="itfinance"
+          href="https://prpservices.in/customer-relationship-management-software/" target="_blank">
+          <img alt="It 5 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/it5.jpg" />
+          <h3>PRP CRM</h3>
+          <span class="tag">CRM Software</span>
+        </a>
+        <a class="work-card" data-category="itfinance" href="https://kwik.trade/" target="_blank">
+          <img alt="It 6 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/it6.jpg" />
+          <h3>Kwik Trade</h3>
+          <span class="tag">Trading Platform</span>
+        </a>
+        <a class="work-card" data-category="itfinance" href="https://tradenowweb.theplatformapi.com/login"
+          target="_blank">
+          <img alt="It 7 - digital marketing project by Black Tie Digital India" decoding="async" loading="lazy"
+            src="/images/work/it7.jpg" />
+          <h3>TradeNow</h3>
+          <span class="tag">Trading App</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <div id="footer"></div>
+  <div class="whatsapp-container">
+    <a class="whatsapp-float" href="https://wa.me/918890099108" target="_blank">
+      <img alt="WhatsApp" decoding="async" loading="lazy" src="/images/icons8-whatsapp-96.png" />
+    </a>
+    <span class="whatsapp-tooltip">Chat with us</span>
+  </div>
+  <div class="cursor-hand"></div>
+  <script src="/js/script.js"></script>
+  <script>
+    /* ============================================================
+       OUR WORK PAGE SCRIPT
+       Loaded only on /our-work/, alongside /js/script.js (base).
+       Handles the portfolio category filter buttons.
+       ============================================================ */
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const filterButtons = document.querySelectorAll(".work-filter button");
+      const workCards = document.querySelectorAll(".work-card");
+
+      filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+
+          filterButtons.forEach(btn => btn.classList.remove("active"));
+          button.classList.add("active");
+
+          const filter = button.getAttribute("data-filter");
+
+          workCards.forEach(card => {
+            const category = card.getAttribute("data-category");
+
+            if (filter === "all" || filter === category) {
+              card.classList.remove("hide");
+            } else {
+              card.classList.add("hide");
+            }
+          });
+
+        });
+      });
+
+    });
+  </script>
+</body>
+
+</html>

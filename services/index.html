@@ -1,0 +1,356 @@
+<head>
+  <meta charset="utf-8" />
+  <title>Our Services | Black Tie Digital India</title>
+  <meta
+    content="Explore Black Tie Digital India's services: social media marketing, performance advertising, branding and content creation, tailored to grow your business online."
+    name="description" />
+  <link href="https://blacktiedigitalindia.com/services/" rel="canonical" />
+  <meta content="website" property="og:type" />
+  <meta content="Our Services | Black Tie Digital India" property="og:title" />
+  <meta
+    content="Explore Black Tie Digital India's services: social media marketing, performance advertising, branding and content creation, tailored to grow your business online."
+    property="og:description" />
+  <meta content="https://blacktiedigitalindia.com/services/" property="og:url" />
+  <meta content="https://blacktiedigitalindia.com/images/logo/black-tie-digital.png" property="og:image" />
+  <meta content="Black Tie Digital India" property="og:site_name" />
+  <meta content="summary_large_image" name="twitter:card" />
+  <meta content="Our Services | Black Tie Digital India" name="twitter:title" />
+  <meta
+    content="Explore Black Tie Digital India's services: social media marketing, performance advertising, branding and content creation, tailored to grow your business online."
+    name="twitter:description" />
+  <meta content="https://blacktiedigitalindia.com/images/logo/black-tie-digital.png" name="twitter:image" />
+  <link href="/favicon_io/favicon.ico" rel="icon" type="image/x-icon" />
+  <link href="/favicon_io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+  <link href="/favicon_io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+  <link href="/favicon_io/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png" />
+  <link href="/favicon_io/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+  <link href="/favicon_io/site.webmanifest" rel="manifest" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link
+    href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&amp;f[]=satoshi@400,500,700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="/css/style.css" rel="stylesheet" />
+  <style>
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      width: 100%;
+    }
+
+    .services {
+      padding: 100px 4%;
+      text-align: center;
+      background: radial-gradient(circle at top, var(--color-charcoal), var(--color-black) 70%);
+
+      animation: fadeSlideUp 1s ease;
+    }
+
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 60px;
+      background: linear-gradient(90deg, var(--color-gold-light), var(--color-white), var(--color-gold));
+      -webkit-background-clip: text;
+      color: transparent;
+
+      text-align: center;
+      line-height: 1.4;
+
+      white-space: normal;
+      word-break: break-word;
+    }
+
+    .service-card {
+      position: relative;
+      padding: 10px 5px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      transition: all 0.4s ease;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 1px;
+      background: linear-gradient(120deg, transparent, var(--color-gold), var(--color-gold-light), transparent);
+      -webkit-mask:
+        linear-gradient(var(--color-white) 0 0) content-box,
+        linear-gradient(var(--color-white) 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: 0.4s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-15px) scale(1.04);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .icon-box {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+    }
+
+    .icon-box i {
+      font-size: 22px;
+      color: var(--color-true-black);
+    }
+
+    .service-card:hover .icon-box {
+      transform: rotate(10deg) scale(1.1);
+    }
+
+    .service-card h3 {
+      margin: 10px 0 6px;
+      font-size: 18px;
+      color: var(--color-surface-alt);
+    }
+
+    .service-card p {
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--color-gray);
+    }
+
+    .service-card:hover h3 {
+      color: var(--color-gold);
+    }
+
+    @media (max-width: 992px) {
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section-title {
+        padding-top: 10px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        padding-top: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <section class="services" id="services">
+    <div class="breadcrumb">
+      <a href="/">← 🏠</a>
+      <span class="separator">/</span>
+      <span>Services</span>
+    </div>
+    <h2 class="section-title">Services - Everything Your Brand Needs, All in One Place.</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-search"></i></div>
+        <h3>SEO</h3>
+        <p>Get found. Rank higher. Grow organically.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-bullseye"></i></div>
+        <h3>Performance Marketing</h3>
+        <p>Data-driven ads that deliver real results.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-mobile-alt"></i></div>
+        <h3>App Development</h3>
+        <p>From idea to app—built to scale.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fab fa-facebook-f"></i></div>
+        <h3>Social Media Marketing</h3>
+        <p>Engage. Influence. Convert.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-microphone"></i></div>
+        <h3>Podcast Production</h3>
+        <p>Launch, grow, and own your voice.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-ad"></i></div>
+        <h3>Ad Management</h3>
+        <p>Meta, Google, YouTube—handled end-to-end.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fab fa-google"></i></div>
+        <h3>Google Ads &amp; PPC</h3>
+        <p>Clicks that convert, ROI that matters.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
+        <h3>WhatsApp Monetization</h3>
+        <p>Turn conversations into customers.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+        <h3>ORM</h3>
+        <p>Shape perception. Build trust.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-laptop-code"></i></div>
+        <h3>Web Design &amp; Development</h3>
+        <p>Websites that look good and sell better.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-camera"></i></div>
+        <h3>Product Photography</h3>
+        <p>Visuals that stop the scroll.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-envelope"></i></div>
+        <h3>Email Marketing</h3>
+        <p>Inbox strategies that drive action.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-pen-nib"></i></div>
+        <h3>Content Marketing</h3>
+        <p>Content that educates, engages, converts.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-image"></i></div>
+        <h3>Billboard &amp; Hoardings</h3>
+        <p>Go big. Get seen offline.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-video"></i></div>
+        <h3>Video Marketing</h3>
+        <p>Stories that capture and convert.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+        <h3>Local SEO &amp; Branding</h3>
+        <p>Dominate your local presence.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-user-friends"></i></div>
+        <h3>Influencer Marketing</h3>
+        <p>Authentic voices. Real impact.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-gem"></i></div>
+        <h3>Branding &amp; Identity</h3>
+        <p>Build a brand they remember.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-chart-line"></i></div>
+        <h3>Conversion Rate Optimization (CRO)</h3>
+        <p>Turn traffic into revenue.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-robot"></i></div>
+        <h3>Marketing Automation</h3>
+        <p>Work smarter. Scale faster.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-filter"></i></div>
+        <h3>Sales Funnel Design</h3>
+        <p>Guide clicks into conversions.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-file-alt"></i></div>
+        <h3>Landing Page Optimization</h3>
+        <p>Pages built to perform.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-shopping-cart"></i></div>
+        <h3>E-commerce Marketing</h3>
+        <p>Scale your online store effortlessly.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-store"></i></div>
+        <h3>Marketplace Management</h3>
+        <p>Win on Amazon, Flipkart &amp; beyond.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-pencil-ruler"></i></div>
+        <h3>UI/UX Design</h3>
+        <p>Designs users love, results you need.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-film"></i></div>
+        <h3>Motion Graphics &amp; Animation</h3>
+        <p>Visuals that move and engage.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fab fa-youtube"></i></div>
+        <h3>YouTube Growth</h3>
+        <p>From views to subscribers.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-lightbulb"></i></div>
+        <h3>Digital Marketing Strategy</h3>
+        <p>Plan smart. Execute better.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-chart-bar"></i></div>
+        <h3>Competitor Analysis</h3>
+        <p>Stay ahead, always.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-user-plus"></i></div>
+        <h3>Lead Generation</h3>
+        <p>Consistent, high-quality leads.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon-box"><i class="fas fa-brain"></i></div>
+        <h3>AI Marketing Solutions</h3>
+        <p>Smarter marketing, powered by AI.</p>
+      </div>
+    </div>
+  </section>
+  <div id="footer"></div>
+  <div class="whatsapp-container">
+    <a class="whatsapp-float" href="https://wa.me/918890099108" target="_blank">
+      <img alt="WhatsApp" decoding="async" loading="lazy" src="/images/icons8-whatsapp-96.png" />
+    </a>
+    <span class="whatsapp-tooltip">Chat with us</span>
+  </div>
+  <div class="cursor-hand"></div>
+  <script src="/js/script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const cards = document.querySelectorAll(".service-card");
+
+      cards.forEach((card, index) => {
+        card.setAttribute("data-aos", "fade-up");
+        card.setAttribute("data-aos-delay", (index % 3) * 150);
+      });
+
+      AOS.init({
+        duration: 1000,
+        once: false,
+        mirror: true,
+        easing: 'ease-in-out'
+      });
+    });
+  </script>
+</body>

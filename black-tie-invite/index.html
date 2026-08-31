@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Black Tie Invites | Black Tie Digital India</title>
+  <meta
+    content="Black Tie Invites offers premium custom digital and print invitation design by Black Tie Digital India."
+    name="description" />
+  <link href="https://blacktiedigitalindia.com/black-tie-invite/" rel="canonical" />
+  <meta content="website" property="og:type" />
+  <meta content="Black Tie Invites | Black Tie Digital India" property="og:title" />
+  <meta
+    content="Black Tie Invites offers premium custom digital and print invitation design by Black Tie Digital India."
+    property="og:description" />
+  <meta content="https://blacktiedigitalindia.com/black-tie-invite/" property="og:url" />
+  <meta content="https://blacktiedigitalindia.com/images/logo/black-tie-digital.png" property="og:image" />
+  <meta content="Black Tie Digital India" property="og:site_name" />
+  <meta content="summary_large_image" name="twitter:card" />
+  <meta content="Black Tie Invites | Black Tie Digital India" name="twitter:title" />
+  <meta
+    content="Black Tie Invites offers premium custom digital and print invitation design by Black Tie Digital India."
+    name="twitter:description" />
+  <meta content="https://blacktiedigitalindia.com/images/logo/black-tie-digital.png" name="twitter:image" />
+  <link href="/favicon_io/favicon.ico" rel="icon" type="image/x-icon" />
+  <link href="/favicon_io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+  <link href="/favicon_io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+  <link href="/favicon_io/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png" />
+  <link href="/favicon_io/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+  <link href="/favicon_io/site.webmanifest" rel="manifest" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link
+    href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&amp;f[]=satoshi@400,500,700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="/css/style.css" rel="stylesheet" />
+  <style>
+    .invites-section {
+      padding: 100px 4%;
+      background: radial-gradient(circle at top, var(--color-charcoal), var(--color-black) 70%);
+      color: var(--color-white);
+
+      animation: fadeSlideUp 1s ease;
+    }
+
+    .invites-container {
+      display: grid;
+      align-items: center;
+    }
+
+    .invites-container p {
+      padding: 20px 10%;
+      text-align: center;
+    }
+
+    .invites-title {
+      font-size: 38px;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, var(--color-gold-light), var(--color-white), var(--color-gold));
+      -webkit-background-clip: text;
+      color: transparent;
+      text-align: center;
+    }
+
+    .invites-content {
+      margin-top: 40px;
+      text-align: center;
+
+      animation: fadeSlideUp 1s ease;
+    }
+
+    .invites-content h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .invites-content p {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--color-gray-light);
+    }
+
+    .invites-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .invite-card {
+      position: relative;
+      flex: 0 1 calc(33.33% - 25px);
+      max-width: calc(33.33% - 25px);
+      height: 200px;
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+
+      background: rgba(255, 255, 255, 0.05);
+
+      transition: all 0.4s ease;
+      z-index: 0;
+    }
+
+    .bg-img {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .invite-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 1px;
+      background: linear-gradient(120deg, transparent, var(--color-gold), var(--color-gold-light), transparent);
+
+      -webkit-mask:
+        linear-gradient(var(--color-white) 0 0) content-box,
+        linear-gradient(var(--color-white) 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+
+      opacity: 0;
+      transition: 0.4s;
+      z-index: 3;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      padding: 20px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      background: rgba(0, 0, 0, 0.45);
+      opacity: 1 !important;
+      transform: none !important;
+      z-index: 2;
+      transition: 0.4s ease;
+    }
+
+    .overlay h3 {
+      color: var(--color-white);
+      font-size: 22px;
+      font-weight: 600;
+      position: relative;
+      z-index: 3;
+      text-shadow: 0 5px 20px rgba(0, 0, 0, 0.9);
+    }
+
+    .overlay p {
+      color: var(--color-gray-lighter);
+      font-size: 14px;
+      margin-top: 10px;
+
+      opacity: 0;
+      transform: translateY(10px);
+      transition: 0.3s;
+    }
+
+    .overlay h3,
+    .overlay p {
+      transition: all 0.4s ease;
+    }
+
+    .invite-card:hover {
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    .invite-card:hover::before {
+      opacity: 1;
+    }
+
+    .invite-card:hover .overlay {
+      background: rgba(0, 0, 0, 0.65);
+    }
+
+    .invite-card:hover .overlay h3 {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    .invite-card:hover .overlay p {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .invite-card:hover .bg-img {
+      transform: scale(1.05);
+      filter: brightness(0.5);
+    }
+
+    .text-after-invite-card {
+      padding-top: 30px;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 992px) {
+      .invites-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .invite-card {
+        flex: 0 1 calc(50% - 25px);
+        max-width: calc(50% - 25px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .invites-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .invite-card {
+        height: 200px;
+        flex: 0 1 100%;
+        max-width: 100%;
+      }
+
+      .invites-title {
+        font-size: 28px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+
+      .invites-title {
+        font-size: 32px;
+      }
+
+      .invites-container p {
+        padding: 20px 5%;
+        font-size: 15px;
+      }
+
+      .invites-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .invite-card {
+        height: 200px;
+      }
+
+      .overlay h3 {
+        font-size: 18px;
+      }
+
+      .overlay p {
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .invites-section {
+        padding: 60px 5%;
+      }
+
+      .invites-title {
+        font-size: 24px;
+        line-height: 1.4;
+      }
+
+      .invites-container p {
+        padding: 15px 0;
+        font-size: 14px;
+      }
+
+      .invites-content h1 {
+        font-size: 22px;
+      }
+
+      .invites-content p {
+        font-size: 14px;
+      }
+
+      .invites-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .invite-card {
+        height: 180px;
+      }
+
+      .overlay {
+        padding: 15px;
+        background: rgba(0, 0, 0, 0.6);
+      }
+
+      .overlay h3 {
+        font-size: 18px;
+      }
+
+      .overlay p {
+        font-size: 13px;
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .invites-section {
+        padding-top: 100px;
+      }
+
+      .invites-title {
+        font-size: 20px;
+      }
+
+      .invite-card {
+        height: 160px;
+      }
+
+      .overlay h3 {
+        font-size: 16px;
+      }
+
+      .overlay p {
+        font-size: 12px;
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: var(--color-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      opacity: 0;
+      transition: 0.4s;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <section class="invites-section">
+    <div class="breadcrumb">
+      <a href="/">← 🏠</a>
+      <span class="separator">/</span>
+      <span>Black Tie Events</span>
+    </div>
+    <div class="invites-container">
+      <h1 class="invites-title">Black Tie Invites - turning moments into memories, starting with the invite.</h1>
+      <p>
+        From weddings to corporate events, we craft personalized digital and premium invites, along with curated
+        gifting, ensuring every detail reflects your story beautifully.
+      </p>
+    </div>
+    <div class="invites-content">
+      <h1>All Types of Custom Invitations</h1>
+      <p>
+        We specialize in designing and delivering unique invites that match your style, theme, and personality.
+        Choose from a wide variety of formats and styles, including:
+      </p>
+      <div class="invites-cards">
+        <div class="invite-card">
+          <div class="bg-img" style="background-image: url('/images/invites/caricature.jpg');"></div>
+          <div class="overlay">
+            <h3>Caricature Invitations</h3>
+            <p>Fun, personalized invites with hand-drawn or digitally illustrated caricatures.</p>
+          </div>
+        </div>
+        <div class="invite-card">
+          <div class="bg-img" style="background-image: url('/images/invites/wedding.jpg');"></div>
+          <div class="overlay">
+            <h3>Wedding Invitation (Digital &amp; Print)</h3>
+            <p>Elegant, traditional, modern, or quirky — we design invitations that set the tone for your
+              big day.</p>
+          </div>
+        </div>
+        <div class="invite-card">
+          <div class="bg-img" style="background-image: url('/images/invites/birthday.jpg');"></div>
+          <div class="overlay">
+            <h3>Birthday Invitation</h3>
+            <p>From kids parties to milestone birthdays — we create fun and memorable birthday invite
+              designs.</p>
+          </div>
+        </div>
+        <div class="invite-card">
+          <div class="bg-img" style="background-image: url('/images/invites/sketch.jpg');"></div>
+          <div class="overlay">
+            <h3>Sketch &amp; Illustrated Invites</h3>
+            <p>Artistic, hand-drawn sketches that add a creative, personal touch to your invitation.</p>
+          </div>
+        </div>
+        <div class="invite-card">
+          <div class="bg-img" style="background-image: url('/images/invites/video.jpg');"></div>
+          <div class="overlay">
+            <h3>Animated / Video Invites</h3>
+            <p>Motion graphics or story-based videos to announce your event in a stylish, interactive way.
+            </p>
+          </div>
+        </div>
+        <div class="invite-card">
+          <div class="bg-img" style="background-image: url('/images/invites/save-date.jpg');"></div>
+          <div class="overlay">
+            <h3>Save the Dates / E-Invites / RSVP</h3>
+            <p>Fully customizable and beautifully designed digital invitations ready to share online or via
+              WhatsApp.</p>
+          </div>
+        </div>
+        <div class="invite-card">
+          <div class="bg-img" style="background-image: url('/images/invites/hardcopy.jpg');"></div>
+          <div class="overlay">
+            <h3>Hardcopy Invites</h3>
+            <p>Premium printed invitations, custom packaging, and luxe finishes available for every
+              occasion.</p>
+          </div>
+        </div>
+      </div>
+      <p class="text-after-invite-card">
+        We bring your vision to life with creativity, emotion, and detail whether you are planning a grand
+        celebration.
+      </p>
+    </div>
+  </section>
+  <div id="footer"></div>
+  <div class="whatsapp-container">
+    <a class="whatsapp-float" href="https://wa.me/918890099108" target="_blank">
+      <img alt="WhatsApp" decoding="async" loading="lazy" src="/images/icons8-whatsapp-96.png" />
+    </a>
+    <span class="whatsapp-tooltip">Chat with us</span>
+  </div>
+  <div class="cursor-hand"></div>
+  <script src="/js/script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+
+</html>

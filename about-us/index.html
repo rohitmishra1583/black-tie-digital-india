@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>About Us | Black Tie Digital India</title>
+  <meta
+    content="Learn about Black Tie Digital India's story, mission and the team behind 500+ successful digital marketing campaigns across Pune, Indore and beyond."
+    name="description" />
+  <link href="https://blacktiedigitalindia.com/about-us/" rel="canonical" />
+  <meta content="website" property="og:type" />
+  <meta content="About Us | Black Tie Digital India" property="og:title" />
+  <meta
+    content="Learn about Black Tie Digital India's story, mission and the team behind 500+ successful digital marketing campaigns across Pune, Indore and beyond."
+    property="og:description" />
+  <meta content="https://blacktiedigitalindia.com/about-us/" property="og:url" />
+  <meta content="https://blacktiedigitalindia.com/images/logo/black-tie-digital.png" property="og:image" />
+  <meta content="Black Tie Digital India" property="og:site_name" />
+  <meta content="summary_large_image" name="twitter:card" />
+  <meta content="About Us | Black Tie Digital India" name="twitter:title" />
+  <meta
+    content="Learn about Black Tie Digital India's story, mission and the team behind 500+ successful digital marketing campaigns across Pune, Indore and beyond."
+    name="twitter:description" />
+  <meta content="https://blacktiedigitalindia.com/images/logo/black-tie-digital.png" name="twitter:image" />
+  <link href="/favicon_io/favicon.ico" rel="icon" type="image/x-icon" />
+  <link href="/favicon_io/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+  <link href="/favicon_io/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+  <link href="/favicon_io/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png" />
+  <link href="/favicon_io/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+  <link href="/favicon_io/site.webmanifest" rel="manifest" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link
+    href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&amp;f[]=satoshi@400,500,700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="/css/style.css" rel="stylesheet" />
+  <style>
+    .about-section {
+      padding: 100px 4%;
+      background: radial-gradient(circle at top, var(--color-charcoal), var(--color-black) 70%);
+      color: var(--color-white);
+    }
+
+    .about-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-subtitle {
+      color: var(--color-gold-deep);
+      font-size: 13px;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    .about-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about-image img {
+      width: 80%;
+      max-width: 400px;
+      transition: 0.5s;
+    }
+
+    .about-image img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    }
+
+    .about-content h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, var(--color-gold-light), var(--color-white), var(--color-gold));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .about-tagline {
+      font-size: 18px;
+      color: var(--color-gold);
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .about-content p {
+      color: var(--color-gray);
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .about-stats {
+      display: flex;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat h3 {
+      font-size: 28px;
+      color: var(--color-gold-light);
+    }
+
+    .stat span {
+      font-size: 14px;
+      color: var(--color-gray);
+    }
+
+    .about-btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 25px;
+      background: linear-gradient(90deg, var(--color-accent), var(--color-accent-amber));
+      color: var(--color-true-black);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .about-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(244, 168, 37, 0.4);
+
+    }
+
+    .mission-vision {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .mv-card {
+      width: 400px;
+      max-width: 100%;
+      padding: 25px;
+      border-radius: 16px;
+
+      background: rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      transition: 0.4s ease;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .mv-card h3 {
+      margin: 10px 0 6px;
+      font-size: 18px;
+      color: var(--color-gold);
+    }
+
+    .mv-card p {
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--color-gray);
+    }
+
+    .mv-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 1px;
+      background: linear-gradient(120deg, transparent, var(--color-gold), var(--color-gold-light), transparent);
+
+      -webkit-mask:
+        linear-gradient(var(--color-white) 0 0) content-box,
+        linear-gradient(var(--color-white) 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+
+      opacity: 0;
+      transition: 0.4s;
+    }
+
+    .mv-card:hover::before {
+      opacity: 1;
+    }
+
+    .mv-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    @media (max-width: 992px) {
+
+      .about-section {
+        padding: 80px 5%;
+      }
+
+      .about-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+      }
+
+      .about-image img {
+        width: 70%;
+        max-width: 350px;
+      }
+
+      .about-content h2 {
+        font-size: 32px;
+      }
+
+      .mission-vision {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .mv-card {
+        width: 100%;
+      }
+
+      .about-tagline {
+        font-size: 16px;
+      }
+
+      .about-stats {
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 576px) {
+
+      .about-section {
+        padding-top: 100px;
+      }
+
+      .about-image img {
+        padding-top: 20px;
+        width: 85%;
+        max-width: 280px;
+      }
+
+      .about-content h2 {
+        font-size: 26px;
+        line-height: 1.3;
+      }
+
+      .about-tagline {
+        font-size: 15px;
+      }
+
+      .about-content p {
+        font-size: 14px;
+      }
+
+      .about-stats {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+      }
+
+      .stat h3 {
+        font-size: 22px;
+      }
+
+      .about-btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar"></div>
+  <section class="about-section">
+    <div class="breadcrumb">
+      <a href="/">← 🏠</a>
+      <span class="separator">/</span>
+      <span>About Us</span>
+    </div>
+    <div class="about-container">
+      <div class="about-image" data-aos="fade-right">
+        <img alt="About Black Tie Digital" decoding="async" loading="lazy" src="/images/about/step1.jpg" />
+      </div>
+      <div class="about-content" data-aos="fade-left">
+        <p class="about-subtitle">ABOUT US</p>
+        <h2>Black Tie Digital India</h2>
+        <p class="about-tagline">
+          We don’t just market brands, we elevate them.
+        </p>
+        <p>
+          Black Tie Digital India is a premium digital marketing agency dedicated to building powerful brand identities
+          and driving measurable business growth. Whether you're a startup or an established enterprise, we design
+          tailored strategies that deliver real, result-driven outcomes.
+        </p>
+        <p>
+          Our expertise spans across SEO, performance marketing, branding, content creation, and complete digital
+          transformation,ensuring your brand not only stands out, but leads.
+        </p>
+        <div class="about-stats">
+          <div class="stat">
+            <h3>500+</h3>
+            <span>Clients</span>
+          </div>
+          <div class="stat">
+            <h3>10000+</h3>
+            <span>Projects</span>
+          </div>
+          <div class="stat">
+            <h3>10+</h3>
+            <span>Years Experience</span>
+          </div>
+        </div>
+        <a class="about-btn" href="/contact/"><i class="fas fa-calendar-check"></i> Book a free consultation with
+          us</a>
+      </div>
+    </div>
+    <div class="mission-vision">
+      <div class="mv-card" data-aos="fade-up">
+        <h3>Our Mission</h3>
+        <p>
+          To deliver ethical, creative, and measurable digital marketing solutions that help businesses scale
+          sustainably
+          and strategically in a competitive online world.
+        </p>
+      </div>
+      <div class="mv-card" data-aos="fade-up" data-aos-delay="150">
+        <h3>Our Vision</h3>
+        <p>
+          To be India's most trusted name in digital marketing, known for driving real results, building lasting
+          relationships, and empowering brands to take control of their growth online.
+        </p>
+      </div>
+    </div>
+  </section>
+  <div id="footer"></div>
+  <div class="whatsapp-container">
+    <a class="whatsapp-float" href="https://wa.me/918890099108" target="_blank">
+      <img alt="WhatsApp" decoding="async" loading="lazy" src="/images/icons8-whatsapp-96.png" />
+    </a>
+    <span class="whatsapp-tooltip">Chat with us</span>
+  </div>
+  <div class="cursor-hand"></div>
+  <script src="/js/script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+
+</html>

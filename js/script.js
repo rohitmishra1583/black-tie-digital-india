@@ -2,42 +2,118 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function loadHTML(id, file, callback) {
     fetch(file)
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById(id).innerHTML = data;
-        if (callback) callback();
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Failed to load ${file}: ${response.status}`);
+        }
+        return response.text();
       })
-      .catch(err => console.log(err));
+      .then(data => {
+        const element = document.getElementById(id);
+
+        if (element) {
+          element.innerHTML = data;
+
+          if (callback) {
+            callback();
+          }
+        }
+      })
+      .catch(error => {
+        console.error(`Error loading ${file}:`, error);
+      });
   }
 
-  loadHTML("navbar", "navbar.html", function () {
-
-    const currentPage = window.location.pathname.split("/").pop();
-
-    document.querySelectorAll("#mobileNav a").forEach(link => {
-      const linkPage = link.getAttribute("href");
-
-      if (linkPage === currentPage) {
-        link.classList.add("active");
-      }
-    });
+  loadHTML("navbar", "/fragments/navbar.html", function () {
 
     const toggle = document.getElementById("menuToggle");
     const nav = document.getElementById("mobileNav");
+    const overlay = document.getElementById("navOverlay");
+    const navLinks = document.querySelectorAll("#mobileNav a");
 
-    if (toggle && nav) {
-      toggle.addEventListener("click", () => {
-        nav.classList.toggle("active");
-      });
+    function closeMenu() {
+      if (nav) nav.classList.remove("active");
+      if (toggle) toggle.classList.remove("active");
+      if (overlay) overlay.classList.remove("active");
     }
 
-    document.querySelectorAll("#mobileNav a").forEach(link => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("active");
+    let currentPath = window.location.pathname;
+
+    // Normalize away any trailing "index.html" (covers local/static-server
+    // setups that serve "/index.html" instead of a clean "/")
+    currentPath = currentPath.replace(/index\.html$/i, "");
+
+    if (currentPath !== "/") {
+      currentPath = currentPath.replace(/\/$/, "");
+    }
+
+    if (currentPath === "") {
+      currentPath = "/";
+    }
+
+    navLinks.forEach(link => {
+
+      let linkPath = new URL(
+        link.getAttribute("href"),
+        window.location.origin
+      ).pathname;
+
+      linkPath = linkPath.replace(/index\.html$/i, "");
+
+      if (linkPath !== "/") {
+        linkPath = linkPath.replace(/\/$/, "");
+      }
+
+      if (linkPath === "") {
+        linkPath = "/";
+      }
+
+      if (currentPath === linkPath) {
+        link.classList.add("active");
+      }
+
+    });
+
+    if (toggle && nav) {
+
+      toggle.addEventListener("click", function () {
+        nav.classList.toggle("active");
+        toggle.classList.toggle("active");
+        if (overlay) overlay.classList.toggle("active");
       });
+
+    }
+
+    if (overlay) {
+      overlay.addEventListener("click", closeMenu);
+    }
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeMenu();
+    });
+
+    navLinks.forEach(link => {
+
+      link.addEventListener("click", function () {
+
+        if (nav) {
+          nav.classList.remove("active");
+        }
+
+        if (toggle) {
+          toggle.classList.remove("active");
+        }
+
+        if (overlay) {
+          overlay.classList.remove("active");
+        }
+
+      });
+
     });
 
     const pageName = document.getElementById("pageName");
+
     if (pageName) {
       pageName.innerText = document.title;
     }
@@ -47,84 +123,91 @@ document.addEventListener("DOMContentLoaded", function () {
       anchor.addEventListener("click", function (e) {
 
         const targetId = this.getAttribute("href");
+
+        if (!targetId || targetId === "#") {
+          return;
+        }
+
         const target = document.querySelector(targetId);
 
-        if (!target) return;
+        if (!target) {
+          return;
+        }
 
         e.preventDefault();
 
-        const nav = document.querySelector("nav");
-        const navbarHeight = nav ? nav.offsetHeight : 0;
+        const navbar = document.querySelector(".navbar");
+
+        const navbarHeight = navbar
+          ? navbar.offsetHeight
+          : 0;
+
+        const targetPosition =
+          target.getBoundingClientRect().top +
+          window.pageYOffset -
+          navbarHeight;
 
         window.scrollTo({
-          top: target.offsetTop - navbarHeight,
+          top: targetPosition,
           behavior: "smooth"
         });
-
-        history.pushState(null, null, targetId);
-
-        if (navLinks) navLinks.classList.remove("active");
-
+        history.pushState(null, "", targetId);
+        if (nav) {
+          nav.classList.remove("active");
+        }
+        if (toggle) {
+          toggle.classList.remove("active");
+        }
       });
-
     });
-
   });
 
-  loadHTML("footer", "footer.html");
+  loadHTML("footer", "/fragments/footer.html");
 
   const cursor = document.querySelector(".cursor-hand");
 
-  document.addEventListener("mousemove", e => {
+  document.addEventListener("mousemove", function (e) {
+
     if (cursor) {
       cursor.style.left = e.clientX + "px";
       cursor.style.top = e.clientY + "px";
     }
+
   });
 
-  const clickables = document.querySelectorAll(
-    "a, button, input, textarea, select, label, [role='button'], .clickable"
-  );
+  function updateClickableElements() {
 
-  clickables.forEach(el => {
-    el.addEventListener("mouseenter", () => {
-      document.body.classList.add("hide-custom-cursor");
-    });
-    el.addEventListener("mouseleave", () => {
-      document.body.classList.remove("hide-custom-cursor");
-    });
-  });
+    const clickables = document.querySelectorAll(
+      "a, button, input, textarea, select, label, [role='button'], .clickable"
+    );
 
-  document.addEventListener("mouseover", e => {
+    clickables.forEach(el => {
+
+      el.addEventListener("mouseenter", function () {
+        document.body.classList.add("hide-custom-cursor");
+      });
+
+      el.addEventListener("mouseleave", function () {
+        document.body.classList.remove("hide-custom-cursor");
+      });
+
+    });
+
+  }
+
+  updateClickableElements();
+
+  document.addEventListener("mouseover", function (e) {
+
     if (!e.target.closest("a, button, input, textarea, select")) {
       document.body.classList.add("cursor-hover");
     }
+
   });
 
-  document.addEventListener("mouseout", () => {
+  document.addEventListener("mouseout", function () {
     document.body.classList.remove("cursor-hover");
   });
-
-  document.addEventListener("mousemove", (e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 20;
-    const y = (e.clientY / window.innerHeight - 0.5) * 20;
-
-    document.querySelectorAll(".floating").forEach((el) => {
-      const speed = el.getAttribute("data-speed");
-      el.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
-    });
-  });
-
-  const words = document.querySelectorAll(".word");
-  let index = 0;
-
-  setInterval(() => {
-    if (words.length > 0) {
-      words[index].classList.remove("active");
-      index = (index + 1) % words.length;
-      words[index].classList.add("active");
-    }
-  }, 2000);
 
   const reveals = document.querySelectorAll(".reveal");
 
@@ -137,6 +220,82 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
+
+  const btn = document.getElementById("backToTop");
+
+  if (btn) {
+    window.addEventListener("scroll", () => {
+      if (document.documentElement.scrollTop > 200) {
+        btn.classList.add("show");
+      } else {
+        btn.classList.remove("show");
+      }
+    });
+
+    btn.onclick = function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    };
+  }
+
+  /* ---------- Home page: floating icon parallax ---------- */
+
+  document.addEventListener("mousemove", function (e) {
+
+    const x =
+      (e.clientX / window.innerWidth - 0.5) * 20;
+
+    const y =
+      (e.clientY / window.innerHeight - 0.5) * 20;
+
+    document.querySelectorAll(".floating").forEach(el => {
+
+      const speed =
+        parseFloat(el.getAttribute("data-speed")) || 1;
+
+      el.style.transform =
+        `translate(${x * speed}px, ${y * speed}px)`;
+
+    });
+
+  });
+
+  /* ---------- Home page: hero word rotator ---------- */
+
+  const words = document.querySelectorAll(".word");
+  let wordIndex = 0;
+
+  if (words.length > 0) {
+    setInterval(() => {
+      words[wordIndex].classList.remove("active");
+      wordIndex = (wordIndex + 1) % words.length;
+      words[wordIndex].classList.add("active");
+    }, 2000);
+  }
+
+  /* ---------- Home page: case-study horizontal scroll ---------- */
+
+  const track = document.querySelector(".scroll-track");
+  const scrollSection = document.querySelector(".case-study-scroll");
+
+  if (track && scrollSection) {
+    window.addEventListener("scroll", () => {
+      const rect = scrollSection.getBoundingClientRect();
+
+      const scrollProgress =
+        -rect.top / (scrollSection.offsetHeight - window.innerHeight);
+
+      const maxMove = track.scrollWidth - window.innerWidth;
+
+      const moveX = maxMove * scrollProgress;
+
+      track.style.transform = `translateX(-${moveX}px)`;
+    });
+  }
+
+  /* ---------- Home page: stat counters ---------- */
 
   const counters = document.querySelectorAll(".counter");
 
@@ -160,135 +319,34 @@ document.addEventListener("DOMContentLoaded", function () {
     update();
   };
 
-  const observer = new IntersectionObserver((entries, observer) => {
+  const counterObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         startCounter(entry.target);
-        observer.unobserve(entry.target);
+        obs.unobserve(entry.target);
       }
     });
   }, { threshold: 0.5 });
 
   counters.forEach(counter => {
-    observer.observe(counter);
-  });
-
-  const stat_counters = document.querySelectorAll(".counter");
-
-  stat_counters.forEach(stat_counters => {
-    const target = +stat_counters.getAttribute("data-target");
-    const speed = 200;
-
-    const updateCount = () => {
-      const count = +stat_counters.innerText;
-      const increment = target / speed;
-
-      if (count < target) {
-        stat_counters.innerText = Math.ceil(count + increment);
-        setTimeout(updateCount, 15);
-      } else {
-        stat_counters.innerText = target + "+";
-      }
-    };
-
-    updateCount();
-  });
-
-  const statElements = document.querySelectorAll(".card h3");
-
-  statElements.forEach(statValue => {
-    const updateStat = () => {
-      const target = +statValue.innerText.replace(/\D/g, '');
-      let current = 0;
-      const speed = 50;
-
-      const increment = target / speed;
-
-      const animate = () => {
-        current += increment;
-
-        if (current < target) {
-          statValue.innerText = Math.ceil(current) + "+";
-          requestAnimationFrame(animate);
-        } else {
-          statValue.innerText = target + "+";
-        }
-      };
-
-      animate();
-    };
-
-    updateStat();
-  });
-
-  const track = document.querySelector(".scroll-track");
-  const section = document.querySelector(".case-study-scroll");
-
-  if (track && section) {
-    window.addEventListener("scroll", () => {
-      const rect = section.getBoundingClientRect();
-
-      const scrollProgress =
-        -rect.top / (section.offsetHeight - window.innerHeight);
-
-      const maxMove = track.scrollWidth - window.innerWidth;
-
-      const moveX = maxMove * scrollProgress;
-
-      track.style.transform = `translateX(-${moveX}px)`;
-    });
-  }
-
-  const btn = document.getElementById("backToTop");
-
-  if (btn) {
-    window.addEventListener("scroll", () => {
-      if (document.documentElement.scrollTop > 200) {
-        btn.classList.add("show");
-      } else {
-        btn.classList.remove("show");
-      }
-    });
-
-    btn.onclick = function () {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    };
-  }
-
-  const filterButtons = document.querySelectorAll(".work-filter button");
-  const workCards = document.querySelectorAll(".work-card");
-
-  filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-
-      filterButtons.forEach(btn => btn.classList.remove("active"));
-      button.classList.add("active");
-
-      const filter = button.getAttribute("data-filter");
-
-      workCards.forEach(card => {
-        const category = card.getAttribute("data-category");
-
-        if (filter === "all" || filter === category) {
-          card.classList.remove("hide");
-        } else {
-          card.classList.add("hide");
-        }
-      });
-
-    });
+    counterObserver.observe(counter);
   });
 
 });
 
+/* ============================================================
+   Home page: case-study viewer
+   (declared in the global scope so the inline onclick="openCase(i)"
+   handlers on index.html can call them directly)
+   ============================================================ */
+
 function updateViewer() {
   const caseData = cases[currentCaseIndex];
 
-  document.getElementById("caseImage").src =
-    caseData.images[currentImageIndex];
+  const viewerImg = document.getElementById("caseImage");
+  viewerImg.src = caseData.images[currentImageIndex];
+  viewerImg.alt = caseData.title + " case study slide " +
+    (currentImageIndex + 1) + " of " + caseData.images.length;
 
   document.getElementById("caseTitle").innerText =
     caseData.title;
