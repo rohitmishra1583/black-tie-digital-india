@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://blacktiedigitalindia.com/sitemap.xml
+Sitemap: https://www.blacktiedigitalindia.com/sitemap.xml
